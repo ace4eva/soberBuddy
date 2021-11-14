@@ -20,7 +20,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content == '$'):
+    if message.content == '$':
         await message.channel.send(message.author + random.choice(busters))
 
 client.run(os.getenv('TOKEN'))
