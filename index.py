@@ -2,7 +2,7 @@ import discord
 import os
 import random
 
-busters = ["a", "b", "c"] 
+busters = ["Morgan is neat. ", "Morgan is great! ", "Morgan is good. "] 
 
 client = discord.Client()
 
