@@ -8,7 +8,6 @@ busters = [
     "taking ten deep breathes"
 ]
 
-img = open("tenor.png")
 client = discord.Client()
 
 
@@ -19,6 +18,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    img = discord.File("tenor.png")
     if message.author == client.user:
         return
 
