@@ -8,7 +8,7 @@ busters = [
     "taking ten deep breathes"
 ]
 
-img = discord.File("https://i.pinimg.com/originals/3a/9f/32/3a9f32461468488a6758c317859ab4ad.gif")
+img = discord.embed("https://i.pinimg.com/originals/3a/9f/32/3a9f32461468488a6758c317859ab4ad.gif")
 
 client = discord.Client()
 
