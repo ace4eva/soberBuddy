@@ -3,10 +3,10 @@ import os
 import random
 
 busters = [
-   "Morgan is neat. ", 
-   "Morgan is great! ", 
-   "Morgan is good. "
-] 
+    "Morgan is neat. ",
+    "Morgan is great! ",
+    "Morgan is good. "
+]
 
 client = discord.Client()
 
