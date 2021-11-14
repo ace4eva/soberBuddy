@@ -8,8 +8,7 @@ busters = [
     "taking ten deep breathes"
 ]
 
-img = discord.Embed({url="https://i.pinimg.com/originals/3a/9f/32/3a9f32461468488a6758c317859ab4ad.gif"}) )
-
+img = discord.File("tenor.png")
 client = discord.Client()
 
 
@@ -24,6 +23,6 @@ async def on_message(message):
         return
 
     if message.content == '$':
-        await message.channel.send(f"Stay strong {message.author.name}! Maybe try {random.choice(busters)}?", embed=img)
+        await message.channel.send(f"Stay strong {message.author.name}! Maybe try {random.choice(busters)}?", file=img)
 
 client.run(os.getenv('TOKEN'))
