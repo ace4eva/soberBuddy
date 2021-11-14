@@ -3,9 +3,9 @@ import os
 import random
 
 busters = [
-    "Morgan is neat. ",
-    "Morgan is great! ",
-    "Morgan is good. "
+    "going for a walk",
+    "drinking a cold glass of water",
+    "taking ten deep breathes"
 ]
 
 client = discord.Client()
@@ -22,6 +22,6 @@ async def on_message(message):
         return
 
     if message.content == '$':
-        await message.channel.send(message.author.name + random.choice(busters))
+        await message.channel.send("Stay strong {message.author.name}! Maybe try {random.choice(busters)}?")
 
 client.run(os.getenv('TOKEN'))
