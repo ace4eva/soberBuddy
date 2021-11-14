@@ -8,7 +8,7 @@ busters = [
     "taking ten deep breathes"
 ]
 
-img = discord.File("tenor.png")
+img = open("tenor.png")
 client = discord.Client()
 
 
