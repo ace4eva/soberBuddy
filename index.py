@@ -78,6 +78,6 @@ async def on_message(message):
         return
 
     if message.content == '$':
-        await message.channel.send(f"Stay strong {message.author.name}! Maybe try {random.choice(busters)}?", file=img)
+        await message.channel.send(f"Stay strong {message.author.name}! Maybe try {random.choice(busters)}?"/*, file=img*/)
 
 client.run(os.getenv('TOKEN'))
