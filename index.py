@@ -43,14 +43,15 @@ def catPic():
 def justForToday():
     r = requests.get('https://www.jftna.org/jft/')
     text = r.text
-    table = etree.HTML(text).find("body/table")
+    headers = etree.HTML(text).find("body/table")
+    print(text)
+    print("\n")
+    body = etree.HTML(text).find("body/table")
     rows = iter(table)
-    headers = [col.text for col in next(rows)]
     jft = []
     for row in rows:
         values = [col.text for col in row]
         jft.append(values)
-    print(jft)
     return f"\n{jft[0][0]}\n{jft[3][0]}\n{jft[4][0]}\n"
          
 
