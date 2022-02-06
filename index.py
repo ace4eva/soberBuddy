@@ -83,5 +83,6 @@ client.run(os.getenv('TOKEN'))
 class CleanBot(message):
     def __init__(self):
         if message.content == '$craving':
-            await message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
+            #await 
+            message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
         
