@@ -52,7 +52,7 @@ def justForToday():
      #   print(etree.parse(row.text))
       #  print("\n----")
     req = requests.get('https://www.jftna.org/jft/')
-    body = BeautifulSoup(req,.text 'html.parser')
+    body = BeautifulSoup(req.text 'html.parser')
     pprint(body)
     r = requests.get('https://www.jftna.org/jft/')
     text = r.text
