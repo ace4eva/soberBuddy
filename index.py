@@ -81,9 +81,9 @@ async def on_message(message):
     if message.content == '$craving':
         cravingBuster(message)
         
-    await message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
+    await message.channel.send(returnMessage)
         
 def cravingBuster(message):
-    return
+    return f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?"
 
 client.run(os.getenv('TOKEN'))
