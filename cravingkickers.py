@@ -35,7 +35,7 @@ kickers = [
     "solving a puzzle", 
     "ripping paper into tiny pieces", 
     "whistling or playing an instrument", 
-    "watching a good movie", 
+    "watching a good movie, your favorite one, or maybe one you've never seen", 
     "watching kitten videos on YouTube", 
     "taking some nice pictures (inside or outside)", 
     "writing an intensive list of anything you can think of", 
@@ -56,5 +56,17 @@ kickers = [
     "mentally noting the emotions you're feeling at the moment", 
     "making a tower out of a deck of cards", 
     "listening to nature sounds, either outside or online", 
-    "tensing every muscle as much as you can for five seconds, then releasing"
+    "tensing every muscle as much as you can for five seconds, then releasing",
+    "writing yourself a letter",
+    "creating a new playlist",
+    "trying out a new recipe",
+    "putting together a photo album or a scrapbook",
+    "taking a day or two just to yourself",
+    "pigging out on some junk food",
+    "imagine breaking up with your addiction. How would it feel",
+    "drink a hot cup of coffee or tea",
+    "making a todo list, and when a craving hits accomplishing one of these things",
+    "rubbing a cold ice cube against your face and neck",
+    "throwing ice cubes into the bathtub can be so relieving! Maybe give it a try",
+    "changing your environment"
 ]
