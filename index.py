@@ -67,8 +67,7 @@ busters = [
 class CleanBot:
     def __init__(self, message):
         if message.content == '$craving':
-            #await 
-            message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
+            await message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
         
 
         
