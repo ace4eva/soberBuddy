@@ -79,7 +79,9 @@ async def on_message(message):
     returnMessage = ''
     
     if message.content == '$craving':
-        await message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
+        cravingBuster(message)
+        
+    await message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
         
 def cravingBuster(message):
     return
