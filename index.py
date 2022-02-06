@@ -78,9 +78,16 @@ async def on_message(message):
     returnMessage = ''
     if message.content == '$craving':
         returnMessage = cravingBuster(message)
+    if message.content == '$cat':
+        returnMessage = catPic(message)
     await message.channel.send(returnMessage)
         
 def cravingBuster(message):
     return f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?"
+
+def catPic(message):
+    #headers_dict = {"x-api-key": "cookie1=value1"}
+    response = requests.get('https://api.thecatapi.com/v1/images/search')
+    return response.url
 
 client.run(os.getenv('TOKEN'))
