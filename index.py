@@ -97,6 +97,7 @@ def catPic(message):
     response = requests.get('https://api.thecatapi.com/v1/images/search')
     print(response)
     print(response.text)
-    return response.text.json()[0]['url']
+    print (response.text.url)
+    return 'debug'
 
 client.run(os.getenv('TOKEN'))
