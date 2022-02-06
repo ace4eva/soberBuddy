@@ -63,14 +63,6 @@ busters = [
     "tensing every muscle as much as you can for five seconds, then releasing"
 ]
 
-
-class CleanBot:
-    def __init__(self, message):
-        if message.content == '$craving':
-            await message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
-        
-
-        
 client = discord.Client()
 
 @client.event
@@ -83,7 +75,13 @@ async def on_message(message):
     #img = discord.File("tenor.png")
     if message.author == client.user:
         return
-    cb = CleanBot(message)
+
+    returnMessage = ''
+    
+    if message.content == '$craving':
+        await message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
         
+def cravingBuster(message):
+    return
 
 client.run(os.getenv('TOKEN'))
