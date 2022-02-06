@@ -4,6 +4,7 @@ import random
 import requests
 import json
 from lxml import etree
+import urllib
 
 import cravingkickers
 #import soberdate
@@ -41,12 +42,15 @@ def catPic():
     return response.json()[0]['url']
 
 def justForToday():
+    req = urllib.parse('https://www.jftna.org/jft/')
+    print(req)
+    
+    #for row in x.iter('tr'):
+     #   print(etree.parse(row.text))
+      #  print("\n----")
+        
     r = requests.get('https://www.jftna.org/jft/')
     text = r.text
-    x = etree.XML('https://www.jftna.org/jft/')
-    for row in x.iter('tr'):
-        print(etree.parse(row.text))
-        print("\n----")
     table = etree.HTML(text).find("body/table")
     rows = iter(table)
     jft = []
