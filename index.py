@@ -51,7 +51,7 @@ def justForToday():
     #for row in x.iter('tr'):
      #   print(etree.parse(row.text))
       #  print("\n----")
-    req = urllib.requests.urlopen('https://www.jftna.org/jft/')
+    req = requests.get('https://www.jftna.org/jft/')
     body = BeautifulSoup(req, 'html.parser')
     pprint(body)
     r = requests.get('https://www.jftna.org/jft/')
