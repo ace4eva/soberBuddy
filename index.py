@@ -43,7 +43,7 @@ def catPic():
 
 def justForToday():
     req = urllib.request.urlopen('https://www.jftna.org/jft/')
-    print(etree.parse(req))
+    print(req.read())
     #for row in x.iter('tr'):
      #   print(etree.parse(row.text))
       #  print("\n----")
