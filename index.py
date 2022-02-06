@@ -63,6 +63,15 @@ busters = [
     "tensing every muscle as much as you can for five seconds, then releasing"
 ]
 
+
+class CleanBot(message):
+    def __init__(self):
+        if message.content == '$craving':
+            #await 
+            message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
+        
+
+        
 client = discord.Client()
 
 @client.event
@@ -79,10 +88,3 @@ async def on_message(message):
         
 
 client.run(os.getenv('TOKEN'))
-
-class CleanBot(message):
-    def __init__(self):
-        if message.content == '$craving':
-            #await 
-            message.channel.send(f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?")
-        
