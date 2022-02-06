@@ -78,7 +78,7 @@ async def on_ready():
 async def on_message(message):
     #img = discord.File("tenor.png")
     
-    if message.content[0] != "$":
+    if message.content.startsWith() != "$":
         return
     if message.author == client.user:
         return
