@@ -77,7 +77,7 @@ async def on_message(message):
         return
     returnMessage = ''
     if message.content == '$craving':
-        cravingBuster(message)
+        returnMessage = cravingBuster(message)
     await message.channel.send(returnMessage)
         
 def cravingBuster(message):
