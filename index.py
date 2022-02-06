@@ -5,7 +5,6 @@ import requests
 import json
 
 import cravingkickers
-
 #import soberdate
 
 client = discord.Client()
@@ -32,7 +31,7 @@ async def on_message(message):
         await message.channel.send(returnMessage)
         
 def cravingBuster(message):
-    return f"Stay strongly {message.author.name}! Maybe try {random.choice(kickers)}?"
+    return f"Stay strongly {message.author.name}! Maybe try {random.choice(cravingkickers.kickers)}?"
 
 def catPic(message):
     response = requests.get('https://api.thecatapi.com/v1/images/search')
