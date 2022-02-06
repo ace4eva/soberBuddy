@@ -95,9 +95,6 @@ def cravingBuster(message):
 
 def catPic(message):
     response = requests.get('https://api.thecatapi.com/v1/images/search')
-    print(response)
-    print(response.text)
-    print (response.url)
-    return 'debug'
+    return response.json()[0]['url']
 
 client.run(os.getenv('TOKEN'))
