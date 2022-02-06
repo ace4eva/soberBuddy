@@ -43,7 +43,7 @@ def catPic():
 
 def justForToday():
     req = urllib.request.urlopen('https://www.jftna.org/jft/')
-    print(etree.parse(req)
+    print(etree.parse(req))
     #for row in x.iter('tr'):
      #   print(etree.parse(row.text))
       #  print("\n----")
@@ -55,7 +55,7 @@ def justForToday():
     for row in rows:
         values = [col.text for col in row]
         jft.append(values)
-    return f"\n{jft[0][0]}\n{jft[3][0]}\n{jft[4][0]}\n"
+    return f"\n{jft[1][0]}\n{jft[3][0]}\n{jft[4][0]}\n"
          
 
 client.run(os.getenv('TOKEN'))
