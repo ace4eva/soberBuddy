@@ -46,6 +46,8 @@ def justForToday():
     x = etree.HTML(text).find("body")
     print(text)
     print("\n")
+    print(text.xpath())
+    print("\n")
     print(x)
     table = etree.HTML(text).find("body/table")
     rows = iter(table)
