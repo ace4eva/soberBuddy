@@ -76,6 +76,9 @@ async def on_ready():
 @client.event
 async def on_message(message):
     #img = discord.File("tenor.png")
+    
+    if message.content[0] != "$":
+        return
     if message.author == client.user:
         return
     returnMessage = ' '
