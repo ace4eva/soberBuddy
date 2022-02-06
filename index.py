@@ -45,7 +45,7 @@ def justForToday():
     text = r.text
     x = etree.parse(r.text)
     for row in x.iter('tr'):
-        print(row)
+        print(row.text)
     table = etree.HTML(text).find("body/table")
     rows = iter(table)
     jft = []
