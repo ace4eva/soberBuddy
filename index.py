@@ -64,7 +64,7 @@ busters = [
 ]
 
 
-class CleanBot(message):
+class CleanBot(self, message):
     def __init__(self):
         if message.content == '$craving':
             #await 
