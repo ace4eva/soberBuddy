@@ -44,7 +44,7 @@ def catPic():
 def justForToday():
     #req = urllib.request.urlopen('https://www.jftna.org/jft/')
     req = requests.get('https://www.jftna.org/jft/')
-    root = etree.fromstring("", base_url="https://www.jftna.org/jft/")
+    root = etree.fromstring("https://www.jftna.org/jft/")
     body = etree.tostring(root.getroot()) 
     print(body)
     #for row in x.iter('tr'):
