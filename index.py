@@ -46,7 +46,7 @@ def justForToday():
     headers = etree.HTML(text).find("body/table")
     print(text)
     print("\n")
-    body = etree.HTML(text).find("body/table")
+    table = etree.HTML(text).find("body/table")
     rows = iter(table)
     jft = []
     for row in rows:
