@@ -43,7 +43,7 @@ def catPic():
 def justForToday():
     r = requests.get('https://www.jftna.org/jft/')
     text = r.text
-    x = etree.parse('https://www.jftna.org/jft/')
+    x = etree.XML('https://www.jftna.org/jft/')
     for row in x.iter('tr'):
         print(etree.parse(row.text))
         print("\n----")
