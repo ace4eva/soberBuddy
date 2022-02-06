@@ -53,7 +53,7 @@ def justForToday():
       #  print("\n----")
     req = requests.get('https://www.jftna.org/jft/')
     body = BeautifulSoup(req.text, 'html.parser')
-    pprint(body.find_all('tr')
+    pprint(body.find_all('tr'))
     r = requests.get('https://www.jftna.org/jft/')
     text = r.text
     table = etree.HTML(text).find("body/table")
