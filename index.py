@@ -1,6 +1,8 @@
 import discord
 import os
 import random
+import requests
+
 #import soberdate
 
 busters = [
@@ -76,12 +78,13 @@ async def on_message(message):
     #img = discord.File("tenor.png")
     if message.author == client.user:
         return
-    returnMessage = ''
+    returnMessage = ' '
     if message.content == '$craving':
         returnMessage = cravingBuster(message)
     if message.content == '$cat':
         returnMessage = catPic(message)
-    await message.channel.send(returnMessage)
+    if returnMessage != ' ':
+        await message.channel.send(returnMessage)
         
 def cravingBuster(message):
     return f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?"
