@@ -2,6 +2,7 @@ import discord
 import os
 import random
 import requests
+import json
 
 #import soberdate
 
@@ -93,8 +94,9 @@ def cravingBuster(message):
     return f"Stay strongly {message.author.name}! Maybe try {random.choice(busters)}?"
 
 def catPic(message):
-    #headers_dict = {"x-api-key": "cookie1=value1"}
     response = requests.get('https://api.thecatapi.com/v1/images/search')
+    print(response)
+    print(response.text)
     return response.text.json()[0]['url']
 
 client.run(os.getenv('TOKEN'))
