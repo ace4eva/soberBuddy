@@ -95,6 +95,6 @@ def cravingBuster(message):
 def catPic(message):
     #headers_dict = {"x-api-key": "cookie1=value1"}
     response = requests.get('https://api.thecatapi.com/v1/images/search')
-    return response.url
+    return response.text.json()[0]['url']
 
 client.run(os.getenv('TOKEN'))
