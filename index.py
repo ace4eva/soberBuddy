@@ -42,8 +42,9 @@ def catPic():
     return response.json()[0]['url']
 
 def justForToday():
-    req = urllib.request.urlopen('https://www.jftna.org/jft/')
-    print(req.read())
+    #req = urllib.request.urlopen('https://www.jftna.org/jft/')
+    req = requests.get('https://www.jftna.org/jft/')
+    print(req.text)
     #for row in x.iter('tr'):
      #   print(etree.parse(row.text))
       #  print("\n----")
