@@ -65,7 +65,6 @@ busters = [
 
 client = discord.Client()
 
-
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
@@ -73,11 +72,16 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    img = discord.File("tenor.png")
+    #img = discord.File("tenor.png")
     if message.author == client.user:
         return
-
-    if message.content == '$':
-        await message.channel.send(f"Stay strong {message.author.name}! Maybe try {random.choice(busters)}?")#, file=img)
+    cb = CleanBot(message)
+        
 
 client.run(os.getenv('TOKEN'))
+
+class CleanBot(message):
+    def __init__(self):
+        if message.content == '$craving':
+            await message.channel.send(f"Stay strong {message.author.name}! Maybe try {random.choice(busters)}?")
+        
