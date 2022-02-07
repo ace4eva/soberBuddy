@@ -49,7 +49,7 @@ def justForToday():
     body = bodybs.find_all('tr')
     for row in body:
         rowText = row.get_text()
-        print rowText
+        print(rowText)
         text.append(rowText.strip())
     pprint(text)
     #r = requests.get('https://www.jftna.org/jft/')
