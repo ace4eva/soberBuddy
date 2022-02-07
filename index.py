@@ -49,6 +49,7 @@ def justForToday():
     body = bodybs.find_all('tr')
     for row in body:
         text.append(row.get_text().strip())
+    pprint(text)
     #r = requests.get('https://www.jftna.org/jft/')
     #text = r.text
     #table = etree.HTML(text).find("body/table")
