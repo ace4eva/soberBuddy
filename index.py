@@ -43,30 +43,22 @@ def catPic():
     return response.json()[0]['url']
 
 def justForToday():
-    #req = urllib.request.urlopen('https://www.jftna.org/jft/')
-    #req = requests.get('https://www.jftna.org/jft/')
-    #root = etree.fromstring("https://www.jftna.org/jft/")
-    #body = etree.tostring(root.getroot()) 
-    #print(body)
-    #for row in x.iter('tr'):
-     #   print(etree.parse(row.text))
-      #  print("\n----")
     req = requests.get('https://www.jftna.org/jft/')
-    body = BeautifulSoup(req.text, 'html.parser')
-    #[text for text in body.stripped_strings]
-    #pprint(text)
-    test = body.find_all('tr')
-    for row in test:
-        pprint(row.get_text().strip())
-    r = requests.get('https://www.jftna.org/jft/')
-    text = r.text
-    table = etree.HTML(text).find("body/table")
-    rows = iter(table)
-    jft = []
-    for row in rows:
-        values = [col.text for col in row]
-        jft.append(values)
-    return f"\n{jft[1][0]}\n{jft[3][0]}\n{jft[4][0]}\n"
+    text = []
+    bodybs = BeautifulSoup(req.text, 'html.parser')
+    body = bodybs.find_all('tr')
+    for row in body:
+        text.append(row.get_text().strip()))
+    #r = requests.get('https://www.jftna.org/jft/')
+    #text = r.text
+    #table = etree.HTML(text).find("body/table")
+    #rows = iter(table)
+    #jft = []
+    #for row in rows:
+    #    values = [col.text for col in row]
+    #    jft.append(values)
+    jft = f"\n{text[1]}\n{text[0]}\n{text[3]}\n"
+    return jft
          
 
 client.run(os.getenv('TOKEN'))
