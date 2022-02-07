@@ -57,7 +57,7 @@ def justForToday():
     #for row in rows:
     #    values = [col.text for col in row]
     #    jft.append(values)
-    jft = f"\n{text[1]}\n{text[0]}\n{text[3]}\n"
+    jft = f"\n{text[1]}\n{text[0]}\n{text[3]}\n{text[4]}\n{text[5]}\n{text[6]}"
     return jft
          
 
