@@ -53,8 +53,8 @@ def justForToday():
       #  print("\n----")
     req = requests.get('https://www.jftna.org/jft/')
     body = BeautifulSoup(req.text, 'html.parser')
-    bodyArray = body.find_all('tr').stripped_strings
-    pprint(bodyArray)
+    [text for text in body.stripped_strings]
+    pprint(body)
     #for row in body.find_all('tr'):
     #    pprint(row.get_text())
     r = requests.get('https://www.jftna.org/jft/')
