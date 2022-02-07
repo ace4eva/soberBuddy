@@ -46,11 +46,10 @@ def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
     text = []
     bodybs = BeautifulSoup(req.text, 'html.parser')
+    bodybs = bodybs.replace("<br>", "\n");
     body = bodybs.find_all('tr')
     for row in body:
-        rowText = row.get_text()
-        print(rowText)
-        text.append(rowText.strip())
+        text.append(row.get_text().strip())
     pprint(text)
     #r = requests.get('https://www.jftna.org/jft/')
     #text = r.text
