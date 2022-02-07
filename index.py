@@ -46,19 +46,12 @@ def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
     text = []
     bodybs = BeautifulSoup(req.text, 'html.parser')
-    bodybs = bodybs.replace("<br>", "\n");
     body = bodybs.find_all('tr')
     for row in body:
-        text.append(row.get_text().strip())
+        rowText = row.i.get_text()
+        #rowText = rowText.replace("<br>", "\n");
+        text.append(rowText)
     pprint(text)
-    #r = requests.get('https://www.jftna.org/jft/')
-    #text = r.text
-    #table = etree.HTML(text).find("body/table")
-    #rows = iter(table)
-    #jft = []
-    #for row in rows:
-    #    values = [col.text for col in row]
-    #    jft.append(values)
     jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}*\n{text[4]}\n\n{text[5]}\n\n*{text[6]}*"
     return jft
          
