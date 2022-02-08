@@ -2,6 +2,7 @@ import discord
 import os
 import random
 import requests
+import random
 import json
 from lxml import etree
 from bs4 import BeautifulSoup
@@ -32,6 +33,8 @@ async def on_message(message):
         returnMessage = catPic()
     if message.content == '$jft':
        returnMessage = justForToday()
+    if message.content == '$video':
+        returnMessage = recoveryVideo()
     if returnMessage != ' ':
         await message.channel.send(returnMessage)
         
@@ -53,6 +56,14 @@ def justForToday():
     pprint(text)
     jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}*\n{text[4]}\n\n{text[5]}\n\n*{text[6]}*"
     return jft
+
+
+def recoveryVideo():
+    """Gets a random youtube url from the text file in the assets directory"""
+    with open("assets/Recovery_Vids.txt", "r") as f:
+        url_list = f.read().splitlines()
+        url = random.choice(url_list)
+    return url
          
 
 client.run(os.getenv('TOKEN'))
