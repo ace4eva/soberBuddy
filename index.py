@@ -62,7 +62,7 @@ def justForToday():
         rowText = row.get_text().strip()
         text.append(rowText)
     pprint(text)
-    jft = f"```\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}\n{text[4]}*\n\n{text[5]}\n\n*{text[6]}*```"
+    jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}\n{text[4]}*\n\n{text[5]}\n\n*{text[6]}*"
     return jft
 
 def dailyReflection():
@@ -83,7 +83,7 @@ def dailyReflection():
         text.append(entry)
         text.append("\n")
     formatted_reflection = "".join(text)
-    intro_string = "```**A.A. Daily Reflection for " + month +  " " + day + ':**\n\n```'
+    intro_string = "**A.A. Daily Reflection for " + month +  " " + day + ':**\n\n'
     return intro_string + formatted_reflection
 
 def recoveryVideo():
@@ -96,9 +96,9 @@ def recoveryVideo():
 def dadJoke():
     """Gets a random dad joke from the text file in the asset directory"""
     with open("assets/Dad_Jokes.txt", "r") as f:
-        url_list = f.read().splitlines()
-        url = random.choice(url_list)
+        joke_list = f.read().splitlines()
+        joke = random.choice(joke_list)
     response = ["Here's a good one?", "Uhm, yeah.. this one is funny?", "Here is your dad joke...", "HEY! Don't blame me! You asked for this!", "Oh Lord, dad joke incoming...", "Oh God, not another one...", "Why... just... why?"]
-    return random.choice(response) + url
+    return "**" + random.choice(response) + "**" + "\n\n" + joke
          
 client.run(os.getenv('TOKEN'))
