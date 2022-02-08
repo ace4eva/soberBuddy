@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 #from pprint import pprint
 
 import cravingkickers
-#import soberdate
 from discord.ext import commands
 from html2markdown import html2markdown
 
@@ -70,8 +69,8 @@ def dailyReflection():
     text = []
     soup = BeautifulSoup(req.text, 'html.parser')
     reflection = soup.find_all("div", {"class": "reflection"})
-    return  reflectiom
-
+    markdown = html2markdown(str(reflection))
+    return  markdown
 
 def recoveryVideo():
     """Gets a random youtube url from the text file in the assets directory"""
