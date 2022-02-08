@@ -112,7 +112,7 @@ def dadJoke():
 
 def quote():
     """Gets a random quote from the text file in the asset directory"""
-    with codecs.open("Inspirational_Quotes.txt", "r", "UTF-8") as f:
+    with codecs.open("assets/Inspirational_Quotes.txt", "r", "UTF-8") as f:
         quote_list = f.read().splitlines()
         quote = random.choice(quote_list)
     return quote
