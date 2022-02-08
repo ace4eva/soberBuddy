@@ -95,7 +95,7 @@ def recoveryVideo():
     response = ["Enjoy this recovery video!", "Here's a video for you to watch", 
     "Video on recovery, coming right up!", "Let's watch this one!",
     "Ah, this is a good one...", "Ask and you shall recieve!"]
-    return "**" + random.choice(response) + "**" + "\n\n" + url
+    return "**" + random.choice(response) + "**" + "\n" + url
          
 def dadJoke():
     """Gets a random dad joke from the text file in the asset directory"""
