@@ -91,14 +91,19 @@ def recoveryVideo():
     with open("assets/Recovery_Vids.txt", "r") as f:
         url_list = f.read().splitlines()
         url = random.choice(url_list)
-    return "Enjoy this recovery video!\n" + url
+    response = ["Enjoy this recovery video!", "Here's a video for you to watch", 
+    "Video on recovery, coming right up!", "Let's watch this one!",
+    "Ah, this is a good one...", "Ask and you shall recieve!"]
+    return "**" + random.choice(response) + "**" + "\n\n" + url
          
 def dadJoke():
     """Gets a random dad joke from the text file in the asset directory"""
     with open("assets/Dad_Jokes.txt", "r") as f:
         joke_list = f.read().splitlines()
         joke = random.choice(joke_list)
-    response = ["Here's a good one?", "Uhm, yeah.. this one is funny?", "Here is your dad joke...", "HEY! Don't blame me! You asked for this!", "Oh Lord, dad joke incoming...", "Oh God, not another one...", "Why... just... why?"]
+    response = ["Here's a good one?", "Uhm, yeah.. this one is funny?", "Here is your dad joke...", 
+    "HEY! Don't blame me! You asked for this!", "Oh Lord, dad joke incoming...", 
+    "Oh God, not another one...", "Why... just... why?"]
     return "**" + random.choice(response) + "**" + "\n\n" + joke
          
 client.run(os.getenv('TOKEN'))
