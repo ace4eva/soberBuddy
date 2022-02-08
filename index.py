@@ -38,7 +38,9 @@ async def on_message(message):
     if message.content == '$video':
         returnMessage = recoveryVideo()
     if message.content == '$dr' or message.content == '$dailyreflections':
-            returnMessage = dailyReflection()
+        returnMessage = dailyReflection()
+    if message.content == '$dadjoke':
+        returnMessage = dadJoke()
     if returnMessage != ' ':
         await message.channel.send(returnMessage)
         
