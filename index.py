@@ -46,7 +46,7 @@ def cravingBuster(message):
 
 def catPic():
     response = requests.get('https://api.thecatapi.com/v1/images/search')
-    return response.json()[0]['url']
+    return "AWWWW! Look at this cat!" + response.json()[0]['url']
 
 def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
@@ -70,9 +70,5 @@ def recoveryVideo():
         url = random.choice(url_list)
     return "Enjoy this recovery video!\n" + url
          
-@bot.command()
-async def halp(ctx):
-    print("halp command running")
-    await ctx.send("Help me!")
 
 client.run(os.getenv('TOKEN'))
