@@ -81,7 +81,8 @@ def dailyReflection():
     for entry in reflection:
         text.append(entry)
         text.append("\n")
-    return intro_string + reflection
+    formatted_reflection = "".join(text)
+    return intro_string + formatted_reflection
 
 def recoveryVideo():
     """Gets a random youtube url from the text file in the assets directory"""
