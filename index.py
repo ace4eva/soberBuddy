@@ -38,6 +38,8 @@ async def on_message(message):
        returnMessage = justForToday()
     if message.content == '$video':
         returnMessage = recoveryVideo()
+    if message.content == '$dr' or message.content == '$dailyreflections' 
+        returnMessage = dailyReflection()
     if returnMessage != ' ':
         await message.channel.send(returnMessage)
         
@@ -61,6 +63,10 @@ def justForToday():
     pprint(text)
     jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}\n{text[4]}*\n\n{text[5]}\n\n*{text[6]}*"
     return jft
+
+def dailyReflection():
+    """Gets todays daily reflection from https://www.aa.org/daily-reflections"""
+    return "test reflection"
 
 
 def recoveryVideo():
