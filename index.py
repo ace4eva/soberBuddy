@@ -10,6 +10,9 @@ from pprint import pprint
 
 import cravingkickers
 #import soberdate
+from discord.ext import commands
+
+bot = commands.Bot(command_prefix='$')
 
 client = discord.Client()
 
@@ -67,5 +70,8 @@ def recoveryVideo():
         url = random.choice(url_list)
     return "Enjoy this recovery video!\n" + url
          
+@bot.command()
+async def help(ctx):
+    await ctx.send("Help me!")
 
 client.run(os.getenv('TOKEN'))
