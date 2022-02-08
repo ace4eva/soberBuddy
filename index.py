@@ -51,7 +51,7 @@ def justForToday():
     soup = BeautifulSoup(req.text, 'html.parser')
     for br in soup.find_all("br"):
         br.replace_with("\n" + br.text)
-    body = souo.find_all('tr')
+    body = soup.find_all('tr')
     for row in body:
         rowText = row.get_text()
         text.append(rowText)
