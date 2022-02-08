@@ -5,7 +5,7 @@ import requests
 import random
 import json
 import cravingkickers
-import codec #Using this to read the quotes file since a lot of special characters
+import codecs #Using this to read the quotes file since a lot of special characters
 from bs4 import BeautifulSoup
 from discord.ext import commands
 from datetime import datetime
