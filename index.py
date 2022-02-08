@@ -93,9 +93,10 @@ def recoveryVideo():
          
 def dadJoke()):
     """Gets a random dad joke from the text file in the asset directory"""
-    with open("assets/Recovery_Vids.txt", "r") as f:
+    with open("assets/Dad_Jokes.txt", "r") as f:
         url_list = f.read().splitlines()
         url = random.choice(url_list)
-    return "Enjoy this recovery video!\n" + url
+    response = ["Here's a good one?", "Uhm, yeah.. this one is funny?", "Here is your dad joke...", "HEY! Don't blame me! You asked for this!", "Oh Lord, dad joke incoming...", "Oh God, not another one...", "Why... just... why?"]
+    return random.choice(response) + url
          
 client.run(os.getenv('TOKEN'))
