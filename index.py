@@ -57,7 +57,7 @@ def justForToday():
         text.append(rowText)
     pprint(text)
     #jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}*\n{text[4]}\n\n{text[5]}\n\n*{text[6]}*"
-    jft = f"__**{text[1]}**__{text[0]}{text[3]}{text[4]}{text[5]}*{text[6]}*"
+    jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}*\n{text[4]}\n\n{text[5]}\n\n*{text[6]}*"
     return jft
 
 
