@@ -56,8 +56,7 @@ def justForToday():
         rowText = row.get_text().strip()
         text.append(rowText)
     pprint(text)
-    #jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}*\n{text[4]}\n\n{text[5]}\n\n*{text[6]}*"
-    jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}*\n{text[4]}\n\n{text[5]}\n\n*{text[6]}*"
+    jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}\n{text[4]}*\n\n{text[5]}\n\n*{text[6]}*"
     return jft
 
 
