@@ -71,7 +71,6 @@ def dailyReflection():
     date_string = datetime.strptime(date, '%y-%m-%d').date()
     month = date_string.strftime("%B")
     day = date_string.strftime("%d")
-    intro_string = "A.A. Daily Reflection for " + month +  " " + day + ':\n'
     reflection = soup.find_all("div", {"class": "reflection"})[0]
     reflection = reflection.get_text()
     #Remove all new lines from the reflections then return a string with proper formatting
@@ -82,6 +81,7 @@ def dailyReflection():
         text.append(entry)
         text.append("\n")
     formatted_reflection = "".join(text)
+    intro_string = "**A.A. Daily Reflection for" + month +  " " + day + ':**\n'
     return intro_string + formatted_reflection
 
 def recoveryVideo():
