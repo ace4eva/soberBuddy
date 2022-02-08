@@ -8,6 +8,7 @@ import cravingkickers
 from bs4 import BeautifulSoup
 from discord.ext import commands
 from datetime import datetime
+from pprint import pprint
 
 
 bot = commands.Bot(command_prefix='$')
@@ -73,6 +74,13 @@ def dailyReflection():
     intro_string = "A.A. Daily Reflection for " + month +  " " + day + ':\n'
     reflection = soup.find_all("div", {"class": "reflection"})[0]
     reflection = reflection.get_text()
+    #Remove all new lines from the reflections then return a string with proper formatting
+    reflection = reflection.split("\n")
+    reflection = [x for x in reflection if x]
+    text = []
+    for entry in reflection:
+        text.append(entry)
+        text.append("\n")
     return intro_string + reflection
 
 def recoveryVideo():
