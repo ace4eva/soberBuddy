@@ -93,7 +93,7 @@ def recoveryVideo():
         url = random.choice(url_list)
     return "Enjoy this recovery video!\n" + url
          
-def dadJoke()):
+def dadJoke():
     """Gets a random dad joke from the text file in the asset directory"""
     with open("assets/Dad_Jokes.txt", "r") as f:
         url_list = f.read().splitlines()
