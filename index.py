@@ -91,5 +91,11 @@ def recoveryVideo():
         url = random.choice(url_list)
     return "Enjoy this recovery video!\n" + url
          
-
+def dadJoke()):
+    """Gets a random dad joke from the text file in the asset directory"""
+    with open("assets/Recovery_Vids.txt", "r") as f:
+        url_list = f.read().splitlines()
+        url = random.choice(url_list)
+    return "Enjoy this recovery video!\n" + url
+         
 client.run(os.getenv('TOKEN'))
