@@ -68,9 +68,9 @@ def dailyReflection():
     """Gets todays daily reflection from https://www.aa.org/daily-reflections"""
     req = requests.get('https://www.aa.org/daily-reflections')
     text = []
-    soup = BeautifulSoup(req.text, 'html')
+    soup = BeautifulSoup(req.text, 'html.parser')
     reflection = soup.find_all("div", {"class": "reflection"})
-    return "'''\n" + reflection+ "\n'''"
+    return  reflection
 
 
 def recoveryVideo():
