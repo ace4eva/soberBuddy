@@ -66,7 +66,11 @@ def justForToday():
 
 def dailyReflection():
     """Gets todays daily reflection from https://www.aa.org/daily-reflections"""
-    return "test reflection"
+    req = requests.get('https://www.aa.org/daily-reflections')
+    text = []
+    soup = BeautifulSoup(req.text, 'html')
+    reflection = soup.find_all("div", {"class": "reflection"})
+    return "'''\n" + reflection+ "\n'''"
 
 
 def recoveryVideo():
