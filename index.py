@@ -71,7 +71,7 @@ def recoveryVideo():
     return "Enjoy this recovery video!\n" + url
          
 @bot.command()
-async def help(ctx):
+async def halp(ctx):
     await ctx.send("Help me!")
 
 client.run(os.getenv('TOKEN'))
