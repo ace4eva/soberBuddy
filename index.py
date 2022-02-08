@@ -74,10 +74,10 @@ def dailyReflection():
     date_string = datetime.strptime(date, '%y-%m-%d').date()
     month = date_string.strftime("%B")
     day = date_string.strftime("%d")
-    formatted_date = month + day
+    intro_string = "A.A. Daily Reflections for " + month +  " " + day + ':\n'
     reflection = soup.find_all("div", {"class": "reflection"})
     markdown = html2markdown(str(reflection))
-    return  formatted_date + "\n" + markdown
+    return intro_string + markdown
 
 def recoveryVideo():
     """Gets a random youtube url from the text file in the assets directory"""
