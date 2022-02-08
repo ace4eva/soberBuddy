@@ -4,12 +4,9 @@ import random
 import requests
 import random
 import json
-from bs4 import BeautifulSoup
-#from pprint import pprint
-
 import cravingkickers
+from bs4 import BeautifulSoup
 from discord.ext import commands
-from html2markdown import html2markdown
 from datetime import datetime
 
 
@@ -68,16 +65,15 @@ def justForToday():
 def dailyReflection():
     """Gets todays daily reflection from https://www.aa.org/daily-reflections"""
     req = requests.get('https://www.aa.org/daily-reflections')
-    text = []
     soup = BeautifulSoup(req.text, 'html.parser')
     date = soup.find("input", {'id': 'edit-date'})['value']
     date_string = datetime.strptime(date, '%y-%m-%d').date()
     month = date_string.strftime("%B")
     day = date_string.strftime("%d")
     intro_string = "A.A. Daily Reflection for " + month +  " " + day + ':\n'
-    reflection = soup.find_all("div", {"class": "reflection"})
-    markdown = html2markdown(str(reflection))
-    return intro_string + markdown
+    reflection = soup.find_all("div", {"class": "reflection"})[0]
+    reflection = reflection.get_text()
+    return intro_string + reflection
 
 def recoveryVideo():
     """Gets a random youtube url from the text file in the assets directory"""
