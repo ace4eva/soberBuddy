@@ -4,13 +4,13 @@ import random
 import requests
 import random
 import json
-from lxml import etree
 from bs4 import BeautifulSoup
-from pprint import pprint
+#from pprint import pprint
 
 import cravingkickers
 #import soberdate
 from discord.ext import commands
+from html2markdown import html2markdown
 
 bot = commands.Bot(command_prefix='$')
 
@@ -70,7 +70,7 @@ def dailyReflection():
     text = []
     soup = BeautifulSoup(req.text, 'html.parser')
     reflection = soup.find_all("div", {"class": "reflection"})
-    return  reflection[0:1999]
+    return  reflectiom
 
 
 def recoveryVideo():

@@ -1,4 +1,12 @@
-def html2markdown(self, html):
+import re, html2text
+from bs4 import BeautifulSoup
+CLEANBODY_RE = re.compile(r'<(/?)(.+?)>', re.M)
+htmlformatter = html2text.HTML2Text()
+htmlformatter.ignore_links = True
+htmlformatter.ignore_images = True
+htmlformatter.body_width = 0
+
+def html2markdown(html):
   # convert html to markdown.
   # specification:
   # remove all tag exccept tags listed in the cleanbody._repl 
@@ -6,14 +14,7 @@ def html2markdown(self, html):
   # confuses. so it is removed
 
   # we need following in the header
-  import re, html2text
-  from bs4 import BeautifulSoup
-  CLEANBODY_RE = re.compile(r'<(/?)(.+?)>', re.M)
-  htmlformatter = html2text.HTML2Text()
-  htmlformatter.ignore_links = True
-  htmlformatter.ignore_images = True
-  htmlformatter.body_width = 0
-
+  
   def remove_non_table_tags_within_table_tag(html):
     def _repl(match):
       tag = match.group(2).split(' ')[0].lower()
