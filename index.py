@@ -10,6 +10,8 @@ from bs4 import BeautifulSoup
 import cravingkickers
 from discord.ext import commands
 from html2markdown import html2markdown
+from datetime import datetime
+
 
 bot = commands.Bot(command_prefix='$')
 
@@ -68,9 +70,14 @@ def dailyReflection():
     req = requests.get('https://www.aa.org/daily-reflections')
     text = []
     soup = BeautifulSoup(req.text, 'html.parser')
+    date = soup.find("input", {'id': 'edit-date'})['value']
+    date_string = datetime.strptime(date, '%y-%m-%d').date()
+    month = date_string.strftime("%B")
+    day = date_string.strftime("%d")
+    formatted_date = month + day
     reflection = soup.find_all("div", {"class": "reflection"})
     markdown = html2markdown(str(reflection))
-    return  markdown
+    return  formatted_date + "\n" + markdown
 
 def recoveryVideo():
     """Gets a random youtube url from the text file in the assets directory"""
