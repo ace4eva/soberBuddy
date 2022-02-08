@@ -75,7 +75,7 @@ def dailyReflection():
     day = date_string.strftime("%d")
     reflection = soup.find_all("div", {"class": "reflection"})[0]
     reflection = reflection.get_text()
-    #Remove all new lines from the reflections then return a string with proper formatting
+    #Removes all new lines from the reflections then return a string with proper formatting
     reflection = reflection.split("\n")
     reflection = [x for x in reflection if x]
     text = []
