@@ -5,6 +5,7 @@ import requests
 import random
 import json
 import cravingkickers
+import codes #Using this to read the quotes file since a lot of special characters
 from bs4 import BeautifulSoup
 from discord.ext import commands
 from datetime import datetime
@@ -106,5 +107,12 @@ def dadJoke():
     "HEY! Don't blame me! You asked for this!", "Oh Lord, dad joke incoming...", 
     "Oh God, not another one...", "Why... just... why?"]
     return "**" + random.choice(response) + "**" + "\n\n" + joke
-         
+
+def dadJoke():
+    """Gets a random quote from the text file in the asset directory"""
+    with codecs.open("Inspirational_Quotes.txt", "r", "UTF-8") as f:
+        quote_list = f.read().splitlines()
+        quote = random.choice(quote_list)
+    return quote
+
 client.run(os.getenv('TOKEN'))
