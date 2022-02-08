@@ -45,9 +45,10 @@ def catPic():
 def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
     text = []
-    bodybs = BeautifulSoup(req.text, 'html.parser')
-    bodybs.br.replace_with("\n\n")
-    body = bodybs.find_all('tr')
+    soup = BeautifulSoup(req.text, 'html.parser')
+    for br in soup.find_all("br"):
+        br.replace_with("\n" + br.text)
+    body = souo.find_all('tr')
     for row in body:
         rowText = row.get_text()
         text.append(rowText)
