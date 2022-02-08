@@ -42,6 +42,8 @@ async def on_message(message):
         returnMessage = dailyReflection()
     if message.content == '$dadjoke':
         returnMessage = dadJoke()
+    if message.content == '$quote':
+        returnMessage = quote()
     if returnMessage != ' ':
         await message.channel.send(returnMessage)
         
@@ -108,7 +110,7 @@ def dadJoke():
     "Oh God, not another one...", "Why... just... why?"]
     return "**" + random.choice(response) + "**" + "\n\n" + joke
 
-def dadJoke():
+def quote():
     """Gets a random quote from the text file in the asset directory"""
     with codecs.open("Inspirational_Quotes.txt", "r", "UTF-8") as f:
         quote_list = f.read().splitlines()
