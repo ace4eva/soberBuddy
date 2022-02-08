@@ -46,7 +46,7 @@ def cravingBuster(message):
 
 def catPic():
     response = requests.get('https://api.thecatapi.com/v1/images/search')
-    return "AWWWW! Look at this cat!" + response.json()[0]['url']
+    return "AWWWW! Look at this cat!\n" + response.json()[0]['url']
 
 def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
