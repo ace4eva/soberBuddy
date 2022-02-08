@@ -72,6 +72,7 @@ def recoveryVideo():
          
 @bot.command()
 async def halp(ctx):
+    print("halp command running")
     await ctx.send("Help me!")
 
 client.run(os.getenv('TOKEN'))
