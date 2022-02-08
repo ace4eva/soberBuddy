@@ -80,7 +80,7 @@ def dailyReflection():
     reflection = reflection.split("\n")
     reflection = [x for x in reflection if x]
     text = []
-    for entry in reflection:
+    for entry in reflection[0:9]:
         text.append(entry)
         text.append("\n")
     formatted_reflection = "".join(text)
