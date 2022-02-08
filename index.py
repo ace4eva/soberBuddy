@@ -38,8 +38,8 @@ async def on_message(message):
        returnMessage = justForToday()
     if message.content == '$video':
         returnMessage = recoveryVideo()
-    if message.content == '$dr' or message.content == '$dailyreflections' 
-        returnMessage = dailyReflection()
+    if message.content == '$dr' or message.content == '$dailyreflections':
+            returnMessage = dailyReflection()
     if returnMessage != ' ':
         await message.channel.send(returnMessage)
         
