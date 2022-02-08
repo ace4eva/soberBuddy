@@ -60,7 +60,7 @@ def justForToday():
         rowText = row.get_text().strip()
         text.append(rowText)
     pprint(text)
-    jft = f"\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}\n{text[4]}*\n\n{text[5]}\n\n*{text[6]}*"
+    jft = f"'''\n__**{text[1]}**__\n{text[0]}\n\n*{text[3]}\n{text[4]}*\n\n{text[5]}\n\n*{text[6]}*'''"
     return jft
 
 def dailyReflection():
@@ -82,7 +82,7 @@ def dailyReflection():
         text.append("\n")
     formatted_reflection = "".join(text)
     intro_string = "**A.A. Daily Reflection for " + month +  " " + day + ':**\n\n'
-    return intro_string + formatted_reflection
+    return "''''" + intro_string + formatted_reflection + "'''"
 
 def recoveryVideo():
     """Gets a random youtube url from the text file in the assets directory"""
