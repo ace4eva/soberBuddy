@@ -70,7 +70,7 @@ def dailyReflection():
     text = []
     soup = BeautifulSoup(req.text, 'html.parser')
     reflection = soup.find_all("div", {"class": "reflection"})
-    return  reflection
+    return  reflection[0:1999]
 
 
 def recoveryVideo():
