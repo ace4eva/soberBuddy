@@ -3,3 +3,4 @@ discord
 requests
 lxml
 bs4
+html2text
