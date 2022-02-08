@@ -84,7 +84,7 @@ def dailyReflection():
         text.append(entry)
         text.append("\n")
     formatted_reflection = "".join(text)
-    intro_string = "__**A.A. Daily Reflection__**\n" + month +  " " + day + '\n\n'
+    intro_string = "__**A.A. Daily Reflection**__\n" + month +  " " + day + '\n\n'
     return intro_string + formatted_reflection
 
 def recoveryVideo():
