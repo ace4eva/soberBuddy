@@ -7,12 +7,9 @@ import json
 import cravingkickers
 import codecs #Using this to read the quotes file since a lot of special characters
 from bs4 import BeautifulSoup
-from discord.ext import commands
 from datetime import datetime
 from pprint import pprint
 
-
-bot = commands.Bot(command_prefix='$')
 
 client = discord.Client()
 
@@ -72,7 +69,7 @@ async def dogPic():
     e = discord.Embed()
     e.set_image(url=dog_picture)
     await message.channel.send(bot_response)
-    await message.channel.send(embed=e)
+    #message.channel.send(embed=e)
     return ' '
 
 def justForToday():
