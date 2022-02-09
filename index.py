@@ -55,7 +55,7 @@ def cravingBuster(message):
 def catPic():
     response = requests.get('https://api.thecatapi.com/v1/images/search')
     responses = ["AWWWW! Look at this cat!", "AND THIS IS WHY WE LOVE CATS", "And here is a cat!", "That cat you wanted? Here it is!", "Ouuu! Look at this one!", "Cats are such amazing and beautiful creatures..."]
-    return "**" + random.choice(responses) + "**" + "\n\n" + response.json()[0]['url']
+    return "**" + random.choice(responses) + "**\n\n" + response.json()[0]['url']
 
 def dogPic():
     url = 'https://dog.ceo/api/breeds/image/random'
@@ -64,7 +64,7 @@ def dogPic():
     bot_response = ["OH HEY! LOOK! It's a dog!!", 
     "OMG SO CUTE!", "Here's your doggo!", 
     "I love when you ask me for dog pictures", "Here, have a dog", "Yasss! More dogs!"]
-    bot_response = random.choice(bot_response) + "\n"
+    bot_response = "**" + random.choice(bot_response) + "**\n\n"
     return bot_response + dog_picture
 
 def justForToday():
