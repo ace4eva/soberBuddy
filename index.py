@@ -60,7 +60,7 @@ def catPic():
     return "**" + random.choice(responses) + "**\n" + response.json()[0]['url']
 
 @client.event
-def dogPic():
+async def dogPic():
     """Fetches a random dog pic"""
     url = 'https://dog.ceo/api/breeds/image/random'
     dog_api_response = requests.get(url)
