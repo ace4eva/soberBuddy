@@ -66,11 +66,7 @@ async def dogPic():
     "OMG SO CUTE!", "Here's your doggo!", 
     "I love when you ask me for dog pictures", "Here, have a dog", "Yasss! More dogs!"]
     bot_response = "**" + random.choice(bot_response) + "**\n"
-    e = discord.Embed()
-    e.set_image(url=dog_picture)
-    await message.channel.send(bot_response)
-    #message.channel.send(embed=e)
-    return ' '
+    return bot_response + dog_picture
 
 def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
