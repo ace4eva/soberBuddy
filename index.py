@@ -72,7 +72,7 @@ async def dogPic():
     e = discord.Embed()
     e.set_image(url=dog_picture)
     await message.channel.send(bot_response)
-    await message.channel.send(e)
+    await message.channel.send(embed=e)
     return ' '
 
 def justForToday():
