@@ -57,7 +57,7 @@ def cravingBuster(message):
 def catPic():
     response = requests.get('https://api.thecatapi.com/v1/images/search')
     responses = ["AWWWW! Look at this cat!", "AND THIS IS WHY WE LOVE CATS", "And here is a cat!", "That cat you wanted? Here it is!", "Ouuu! Look at this one!", "Cats are such amazing and beautiful creatures..."]
-    return "**" + random.choice(responses) + "**\n\n" + response.json()[0]['url']
+    return "**" + random.choice(responses) + "**\n" + response.json()[0]['url']
 
 def dogPic():
     """Fetches a random dog pic"""
@@ -67,8 +67,12 @@ def dogPic():
     bot_response = ["OH HEY! LOOK! It's a dog!!", 
     "OMG SO CUTE!", "Here's your doggo!", 
     "I love when you ask me for dog pictures", "Here, have a dog", "Yasss! More dogs!"]
-    bot_response = "**" + random.choice(bot_response) + "**\n\n"
-    return bot_response + dog_picture
+    bot_response = "**" + random.choice(bot_response) + "**\n"
+    e = discord.Embed()
+    e.set_image(url=dog_picture)
+    await message.channel.send(bot_response)
+    await message.channel.send(e)
+    return ' '
 
 def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
@@ -100,7 +104,7 @@ def dailyReflection():
     text = []
     for entry in reflection[0:9]:
         text.append(entry)
-        text.append("\n")
+        text.append("\n")let 
     formatted_reflection = "".join(text)
     intro_string = "__**A.A. Daily Reflection**__\n" + month +  " " + day + '\n\n'
     return intro_string + formatted_reflection
@@ -134,5 +138,5 @@ def inspirational_quote():
 
 def help_command():
     return "This will be the help command"
-    
+
 client.run(os.getenv('TOKEN'))
