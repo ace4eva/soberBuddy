@@ -46,6 +46,8 @@ async def on_message(message):
         returnMessage = dadJoke()
     if message.content == '$inspire' or message.content == '$inspirational':
         returnMessage = inspirational_quote()
+    if message.content == '$help':
+        returnMessage = help_command()
     if returnMessage != ' ':
         await message.channel.send(returnMessage)
         
@@ -58,6 +60,7 @@ def catPic():
     return "**" + random.choice(responses) + "**\n\n" + response.json()[0]['url']
 
 def dogPic():
+    """Fetches a random dog pic"""
     url = 'https://dog.ceo/api/breeds/image/random'
     dog_api_response = requests.get(url)
     dog_picture = dog_api_response.json()['message']
@@ -129,5 +132,7 @@ def inspirational_quote():
         quote = random.choice(quote_list)
     return quote
 
-
+def help_command():
+    return "This will be the help command"
+    
 client.run(os.getenv('TOKEN'))
