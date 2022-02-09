@@ -34,6 +34,8 @@ async def on_message(message):
         returnMessage = cravingBuster(message)
     if message.content == '$cat':
         returnMessage = catPic()
+    if message.content == '$dog'"
+        returnMessage = dogPic()
     if message.content == '$jft':
        returnMessage = justForToday()
     if message.content == '$video':
@@ -54,6 +56,16 @@ def catPic():
     response = requests.get('https://api.thecatapi.com/v1/images/search')
     responses = ["AWWWW! Look at this cat!", "AND THIS IS WHY WE LOVE CATS", "And here is a cat!", "That cat you wanted? Here it is!", "Ouuu! Look at this one!", "Cats are such amazing and beautiful creatures..."]
     return "**" + random.choice(responses) + "**" + "\n\n" + response.json()[0]['url']
+
+def dogPic():
+    url = 'https://dog.ceo/api/breeds/image/random'
+    dog_api_response = requests.get(url)
+    dog_picture = dog_api_response.json()['message']
+    bot_response = ["OH HEY! LOOK! It's a dog!!", 
+    "OMG SO CUTE!", "Here's your doggo!", 
+    "I love when you ask me for dog pictures", "Here, have a dog", "Yasss! More dogs!"]
+    bot_response = random.choice(bot_response) + "\n"
+    return bot_response + dog_picture
 
 def justForToday():
     req = requests.get('https://www.jftna.org/jft/')
@@ -116,5 +128,6 @@ def inspirational_quote():
         quote_list = f.read().splitlines()
         quote = random.choice(quote_list)
     return quote
+
 
 client.run(os.getenv('TOKEN'))
