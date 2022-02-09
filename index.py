@@ -34,7 +34,7 @@ async def on_message(message):
         returnMessage = cravingBuster(message)
     if message.content == '$cat':
         returnMessage = catPic()
-    if message.content == '$dog'
+    if message.content == '$dog':
         returnMessage = dogPic()
     if message.content == '$jft':
        returnMessage = justForToday()
