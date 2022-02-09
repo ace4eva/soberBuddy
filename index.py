@@ -104,7 +104,7 @@ def dailyReflection():
     text = []
     for entry in reflection[0:9]:
         text.append(entry)
-        text.append("\n")let 
+        text.append("\n")
     formatted_reflection = "".join(text)
     intro_string = "__**A.A. Daily Reflection**__\n" + month +  " " + day + '\n\n'
     return intro_string + formatted_reflection
