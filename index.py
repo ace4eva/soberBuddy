@@ -45,7 +45,8 @@ async def on_message(message):
         returnMessage = recoveryMeme()
     if message.content == '$help':
         returnMessage = help_command()
-    await message.channel.send(returnMessage)
+    if message.content != ' ':
+        await message.channel.send(returnMessage)
         
 def cravingBuster(message):
     return f"Stay strongly {message.author.name}! Maybe try {random.choice(cravingkickers.kickers)}?"
