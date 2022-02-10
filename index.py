@@ -125,7 +125,23 @@ def recoveryVideo():
     "Video on recovery, coming right up!", "Let's watch this one!",
     "Ah, this is a good one...", "Ask and you shall recieve!"]
     return "**" + random.choice(response) + "**" + "\n" + url
-         
+
+def gratitude():
+    """Gets 5 random things to be grateful for from the gratitude list text file"""
+    print("gratitude function started")
+    with open("assets/gratitude.txt", "r") as f:
+        print("opening gratitude list")
+        gratitude_list = f.read().splitlines()
+    list_of_five_things = []
+    list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
+    response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
+    five_things = "\n".join(list_of_five_things)
+    return "**" + response + "**" + "\n" + five_things
+
 def dadJoke():
     """Gets a random dad joke from the text file in the asset directory"""
     with open("assets/Dad_Jokes.txt", "r") as f:
@@ -142,23 +158,6 @@ def inspirational_quote():
         quote_list = f.read().splitlines()
         quote = random.choice(quote_list)
     return quote
-
-def gratitude():
-    """Gets 5 random things to be grateful for from the gratitude list text file"""
-    print("gratitude function started")
-    with open("assets/gratitude.txt", "r") as f:
-        print("opening gratitude list")
-        gratitude_list = f.read().splitlines()
-    return "debug message"
-    #list_of_five_things = []
-    #list_of_five_things.append(random.choice(gratitude_list))
-    #list_of_five_things.append(random.choice(gratitude_list))
-    #list_of_five_things.append(random.choice(gratitude_list))
-    #list_of_five_things.append(random.choice(gratitude_list))
-    #list_of_five_things.append(random.choice(gratitude_list))
-    #response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
-    #five_things = "\n".join(list_of_five_things)
-    #return "**" + response + "**" + "\n" + five_things
 
 def help_command():
     return "This will be the help command"
