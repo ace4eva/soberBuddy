@@ -41,6 +41,8 @@ async def on_message(message):
         returnMessage = dadJoke()
     if message.content == '$inspire' or message.content == '$inspirational':
         returnMessage = inspirational_quote()
+    if message.content == '$meme:
+        returnMessage = recoveryMeme()
     if message.content == '$help':
         returnMessage = help_command()
     await message.channel.send(returnMessage)
@@ -98,6 +100,17 @@ def dailyReflection():
     formatted_reflection = "".join(text)
     intro_string = "__**A.A. Daily Reflection**__\n" + month +  " " + day + '\n\n'
     return intro_string + formatted_reflection
+
+def recoveryMeme():
+    """Returns a random recovery meme from the imgur url list in assets/recovery_meme.txt"""
+    with open("assets/recovery_meme.txt", "r") as f:
+        url_list = f.read().splitlines()
+        url = random.choice(url_list)
+    response = ["Haaaa this one is good.", 
+    "One recovery meme, coming right up!", "Take a meme, please", 
+    "Why do people in recovery love memes so much?", 
+    "Another recovery meme coming your way!", "Recovery memes for everyone!"]
+    return "**" + random.choice(response) + "**" + "\n" + url
 
 def recoveryVideo():
     """Gets a random youtube url from the text file in the assets directory"""
