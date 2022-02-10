@@ -45,7 +45,7 @@ async def on_message(message):
         returnMessage = recoveryMeme()
     if message.content == '$gratitude':
         print("Gratitude command")
-        returnMessage == gratitudeList()
+        returnMessage == gratitude()
     if message.content == '$help':
         returnMessage = help_command()
     if returnMessage != ' ':
@@ -143,7 +143,7 @@ def inspirational_quote():
         quote = random.choice(quote_list)
     return quote
 
-def gratitudeList():
+def gratitude():
     """Gets 5 random things to be grateful for from the gratitude list text file"""
     with open("assets/gratitude.txt", "r") as f:
         gratitude_list = f.read().splitlines()
