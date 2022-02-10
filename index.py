@@ -103,7 +103,7 @@ def dailyReflection():
 
 def recoveryMeme():
     """Returns a random recovery meme from the imgur url list in assets/recovery_meme.txt"""
-    with open("assets/recovery_meme.txt", "r") as f:
+    with open("assets/recovery_memes.txt", "r") as f:
         url_list = f.read().splitlines()
         url = random.choice(url_list)
     response = ["Haaaa this one is good.", 
