@@ -47,7 +47,8 @@ async def on_message(message):
         returnMessage == gratitudeList()
     if message.content == '$help':
         returnMessage = help_command()
-    await message.channel.send(returnMessage)
+    if returnMessage != ' ':
+        await message.channel.send(returnMessage)
         
 def cravingBuster(message):
     return f"Stay strongly {message.author.name}! Maybe try {random.choice(cravingkickers.kickers)}?"
