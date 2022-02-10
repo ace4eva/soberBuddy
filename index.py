@@ -44,6 +44,7 @@ async def on_message(message):
     if message.content == '$meme':
         returnMessage = recoveryMeme()
     if message.content == '$gratitude':
+        print("Gratitude command")
         returnMessage == gratitudeList()
     if message.content == '$help':
         returnMessage = help_command()
