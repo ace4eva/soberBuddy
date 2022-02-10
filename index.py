@@ -128,9 +128,9 @@ def recoveryVideo():
 
 def gratitude():
     """Gets 5 random things to be grateful for from the gratitude list text file"""
-    print("gratitude function started")
+    print("gratitude function started")  #debug
     with open("assets/gratitude.txt", "r") as f:
-        print("opening gratitude list")
+        print("opening gratitude list") #debug
         gratitude_list = f.read().splitlines()
     list_of_five_things = []
     list_of_five_things.append(random.choice(gratitude_list))
@@ -138,10 +138,11 @@ def gratitude():
     list_of_five_things.append(random.choice(gratitude_list))
     list_of_five_things.append(random.choice(gratitude_list))
     list_of_five_things.append(random.choice(gratitude_list))
-    print("finished making the list of five things")
+    print("finished making the list of five things")  #debug
+    print(list_of_five_things)
     response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
     five_things = "\n".join(list_of_five_things)
-    print("not sure if code even reaches this point")
+    print(five_things)  #debug
     return "**" + response + "**" + "\n" + five_things
 
 def dadJoke():
