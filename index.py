@@ -143,7 +143,6 @@ def inspirational_quote():
 
 def gratitudeList():
     """Gets 5 random things to be grateful for from the gratitude list text file"""
-    print("gratitudeList function started")
     with open("assets/gratitude.txt", "r") as f:
         gratitude_list = f.read().splitlines()
     list_of_five_things = []
