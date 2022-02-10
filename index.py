@@ -45,7 +45,7 @@ async def on_message(message):
         returnMessage = recoveryMeme()
     if message.content == '$help':
         returnMessage = help_command()
-    if message.content != ' ':
+    if returnMsessage != ' ':
         await message.channel.send(returnMessage)
         
 def cravingBuster(message):
