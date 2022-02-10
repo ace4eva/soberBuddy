@@ -143,7 +143,8 @@ def gratitude():
     response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
     five_things = "\n".join(list_of_five_things)
     print(five_things)  #debug
-    return "**" + response + "**" + "\n" + five_things
+    #return "**" + response + "**" + "\n" + five_things
+    return five_things #going to see if this works because the top one isnt working
 
 def dadJoke():
     """Gets a random dad joke from the text file in the asset directory"""
