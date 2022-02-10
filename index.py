@@ -146,13 +146,15 @@ def gratitudeList():
     print("gratitudeList function started")
     with open("assets/gratitude.txt", "r") as f:
         gratitude_list = f.read().splitlines()
-    counter = 0
     list_of_five_things = []
     list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
+    list_of_five_things.append(random.choice(gratitude_list))
     response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
-    list_of_five_things = "".join(list_of_five_things)
-    return "test gratitude command"
-    #return "**" + response + "**" + "\n" + list_of_five_things
+    five_things = "\n".join(list_of_five_things)
+    return "**" + response + "**" + "\n" + five_things
 
 def help_command():
     return "This will be the help command"
