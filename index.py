@@ -20,11 +20,9 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    #img = discord.File("tenor.png")
-    
-    #if message.content.startsWith() != "$":
-    #    return
     if message.author == client.user:
+        return
+    if message.content[0] != '$':
         return
     returnMessage = ' '
     if message.content == '$craving':
@@ -45,8 +43,7 @@ async def on_message(message):
         returnMessage = inspirational_quote()
     if message.content == '$help':
         returnMessage = help_command()
-    if returnMessage != ' ':
-        await message.channel.send(returnMessage)
+    await message.channel.send(returnMessage)
         
 def cravingBuster(message):
     return f"Stay strongly {message.author.name}! Maybe try {random.choice(cravingkickers.kickers)}?"
