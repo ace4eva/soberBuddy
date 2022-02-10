@@ -138,8 +138,10 @@ def gratitude():
     list_of_five_things.append(random.choice(gratitude_list))
     list_of_five_things.append(random.choice(gratitude_list))
     list_of_five_things.append(random.choice(gratitude_list))
+    print("finished making the list of five things")
     response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
     five_things = "\n".join(list_of_five_things)
+    print("not sure if code even reaches this point")
     return "**" + response + "**" + "\n" + five_things
 
 def dadJoke():
