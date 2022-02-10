@@ -41,7 +41,7 @@ async def on_message(message):
         returnMessage = dadJoke()
     if message.content == '$inspire' or message.content == '$inspirational':
         returnMessage = inspirational_quote()
-    if message.content == '$meme:
+    if message.content == '$meme':
         returnMessage = recoveryMeme()
     if message.content == '$help':
         returnMessage = help_command()
