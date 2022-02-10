@@ -43,7 +43,7 @@ async def on_message(message):
         returnMessage = inspirational_quote()
     if message.content == '$meme':
         returnMessage = recoveryMeme()
-    if message.content == '$gratitude:
+    if message.content == '$gratitude':
         returnMessage == gratitudeList()
     if message.content == '$help':
         returnMessage = help_command()
