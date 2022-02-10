@@ -149,7 +149,7 @@ def gratitudeList():
     list_of_five_things = []
     while counter < 5:
         counter += 1
-        list_of_fivethings.append(random.choice(gratitude_list))
+        list_of_five_things.append(random.choice(gratitude_list))
     response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
     list_of_five_things = "".join(list_of_five_things)
     return "**" + response + "**" + "\n" + list_of_five_things
