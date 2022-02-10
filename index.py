@@ -43,10 +43,11 @@ async def on_message(message):
         returnMessage = inspirational_quote()
     if message.content == '$meme':
         returnMessage = recoveryMeme()
+    if message.content == '$gratitude' or message.content == '$grateful':
+        returnMessage == gratitudeList()
     if message.content == '$help':
         returnMessage = help_command()
-    if returnMessage != ' ':
-        await message.channel.send(returnMessage)
+    await message.channel.send(returnMessage)
         
 def cravingBuster(message):
     return f"Stay strongly {message.author.name}! Maybe try {random.choice(cravingkickers.kickers)}?"
@@ -140,6 +141,19 @@ def inspirational_quote():
         quote = random.choice(quote_list)
     return quote
 
+def gratitude_list():
+    """Gets 5 random things to be grateful for from the gratitude list text file"""
+    with open("assets/gratitude.txt", "r"):
+        gratitude_list = f.read().splitlines()
+    counter = 0
+    list_of_five_things = []
+    while counter < 5:
+        counter += 1
+        list_of_fivethings.append(random.choice(gratitude_list))
+    response = "Here are 5 things you could be grateful for. If these don't apply to you, generate 5 more!"
+    list_of_five_things = str.join(list_of_five_things)
+    return "**" + response + "**" + "\n" + list_of_five_things
+    
 def help_command():
     return "This will be the help command"
 
